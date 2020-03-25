@@ -112,3 +112,12 @@ graph{
     1 [style=filled];
 }
 ```
+
+流程图
+
+```sequence {theme="simple"}
+local->github: push master
+Note over github: deploy gh-pages
+github->gitee: sync repo
+Note over gitee: deploy gitee pages
+```
