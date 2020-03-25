@@ -9,7 +9,7 @@ export class ArticlesConfig {
     public articleFolder: string = "articles";
 
     @IsNotEmpty()
-    public destFolder: string = "docs";
+    public destFolder: string = "dist";
 
     @IsNotEmpty()
     public articleEntryName: string = "index.md";
