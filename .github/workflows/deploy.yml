@@ -19,9 +19,19 @@ jobs:
           npm run build
           cd ..
 
+      - name: Render
+        run: |
+          node ./renderer/dist/index.js
+      
+      - name: Debug
+        run: |
+          ls dist
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist # The folder the action should deploy.
+          CLEAN: true
+          DEBUG: true
