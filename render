@@ -1,0 +1,3 @@
+#!/bin/sh
+tsc -p renderer
+node ./renderer/dist/index.js
