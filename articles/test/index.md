@@ -2,6 +2,8 @@
 title: 测试文档
 ---
 
+<!-- @import "author.html" -->
+
 <!-- @import "style.less" -->
 
 # 测试文档 {.h1-center}
