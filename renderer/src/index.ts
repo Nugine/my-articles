@@ -54,14 +54,16 @@ async function main() {
         throw new Error(`can not perpare folder: ${config.destFolder}`);
     }
 
-    const articles = await findArticles(config.articleFolder, config.articleEntryName);
+    const articles = await findArticles(config.destFolder, config.articleEntryName);
     console.log(`found ${articles.length} articles\n`);
 
-    for (const article of articles) {
-        console.log(`article: ${JSON.stringify(article, undefined, 4)}`);
+    for (let i = 0; i < articles.length; ++i) {
+        const article = articles[i];
+
+        console.log(`article ${i + 1}: ${JSON.stringify(article, undefined, 4)}`);
 
         await prompt_task(
-            `rendering ${article.filePath} ... `,
+            `rendering ${article.filePath} => ${article.htmlPath} ... `,
             renderArticle(article),
             "ok"
         );

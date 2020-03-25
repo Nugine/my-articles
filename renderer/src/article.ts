@@ -6,7 +6,7 @@ export interface Article {
     filePath: string,
     projectDirectoryPath: string,
     htmlPath: string,
-    pdfPath: string,
+    // pdfPath: string,
 }
 
 
@@ -30,7 +30,7 @@ export async function findArticles(dir: string, articleEntryName: string): Promi
                         filePath: entryPath,
                         projectDirectoryPath: dir,
                         htmlPath: path.join(dir, basename + ".html"),
-                        pdfPath: path.join(dir, basename + ".pdf")
+                        // pdfPath: path.join(dir, basename + ".pdf")
                     };
 
                     yield article;
