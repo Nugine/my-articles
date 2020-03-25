@@ -1,4 +1,10 @@
-# 测试文档
+---
+title: 测试文档
+---
+
+<!-- @import "style.less" -->
+
+# 测试文档 {.h1-center}
 
 [toc]
 
