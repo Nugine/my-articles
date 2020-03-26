@@ -2,9 +2,9 @@
 title: 测试文档
 ---
 
-<!-- @import "author.html" -->
+<!-- @import "../../parts/header.html" -->
 
-<!-- @import "style.less" -->
+<!-- @import "../../parts/style.less" -->
 
 # 测试文档 {.h1-center}
 
@@ -129,3 +129,5 @@ Note over github: deploy gh-pages
 github->gitee: sync repo
 Note over gitee: deploy gitee pages
 ```
+
+<!-- @import "../../parts/footer.html" -->
