@@ -5,6 +5,8 @@ import * as mume from "@shd101wyy/mume";
 import { getConfig, defaultConfigName, ArticlesConfig } from "./config";
 import { findArticles, Article } from "./article";
 
+import { replaceInFile } from "./replacer"
+
 import fs from "fs-extra";
 
 async function prompt_task(prompt: string, task: Promise<void>, end: string) {
@@ -36,9 +38,13 @@ async function perpareDest(config: ArticlesConfig) {
     console.log()
 }
 
-async function renderArticle(article: Article) {
+async function renderArticle(article: Article, config: ArticlesConfig) {
     const engine = new mume.MarkdownEngine(article);
     await engine.htmlExport({});
+
+    for (const [re, value] of config.replacers) {
+        await replaceInFile(article.htmlPath, re, value);
+    }
 }
 
 async function main() {
@@ -64,7 +70,7 @@ async function main() {
 
         await prompt_task(
             `rendering ${article.filePath} => ${article.htmlPath} ... `,
-            renderArticle(article),
+            renderArticle(article, config),
             "ok"
         );
 

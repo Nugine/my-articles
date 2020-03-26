@@ -1,5 +1,4 @@
-import fs from "fs";
-import { promisify } from "util";
+import fs from "fs-extra";
 import path from "path";
 
 export interface Article {
@@ -12,14 +11,11 @@ export interface Article {
 export async function findArticles(dir: string, articleEntryName: string): Promise<Article[]> {
 
     async function* _findArticles(dir: string): AsyncGenerator<Article> {
-        const readdir = promisify(fs.readdir);
-        const stat = promisify(fs.stat);
-
-        const entryNames = await readdir(dir);
+        const entryNames = await fs.readdir(dir);
 
         for (const name of entryNames) {
             const entryPath = path.join(dir, name);
-            const entryStat = await stat(entryPath);
+            const entryStat = await fs.stat(entryPath);
 
             if (entryStat.isDirectory()) {
                 for await (const article of _findArticles(entryPath)) {
