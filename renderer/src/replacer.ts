@@ -1,8 +1,10 @@
 import fs from "fs-extra";
 
-export async function replaceInFile(path: string, re: string, value: string) {
-    const text = await fs.readFile(path, "utf8");
-    const regex = new RegExp(re, "gm");
-    const ans = text.replace(regex, value);
-    await fs.writeFile(path, ans);
+export async function replaceInFile(path: string, replacers: Array<[string, string]>) {
+    let text = await fs.readFile(path, "utf8");
+    for (const [re, value] of replacers) {
+        const regex = new RegExp(re, "gm");
+        text = text.replace(regex, value);
+    }
+    await fs.writeFile(path, text);
 }

@@ -42,9 +42,7 @@ async function renderArticle(article: Article, config: ArticlesConfig) {
     const engine = new mume.MarkdownEngine(article);
     await engine.htmlExport({});
 
-    for (const [re, value] of config.replacers) {
-        await replaceInFile(article.htmlPath, re, value);
-    }
+    await replaceInFile(article.htmlPath, config.replacers);
 }
 
 async function main() {
