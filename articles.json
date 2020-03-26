@@ -1,0 +1,12 @@
+{
+    "replacers": [
+        [
+            "https://bramp.github.io/js-sequence-diagrams/css/sequence-diagram-min.css",
+            "https://cdn.jsdelivr.net/npm/js-sequence-diagram@2.0.1/dist/sequence-diagram-min.css"
+        ],
+        [
+            "https://bramp.github.io/js-sequence-diagrams/js/sequence-diagram-min.js",
+            "https://cdn.jsdelivr.net/npm/js-sequence-diagram@2.0.1/dist/sequence-diagram-min.js"
+        ]
+    ]
+}
