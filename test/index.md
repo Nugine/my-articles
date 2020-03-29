@@ -6,7 +6,7 @@ title: 测试文档
 
 <!-- @import "../../parts/style.less" -->
 
-# 测试文档 {.h1-center}
+# 测试文档 
 
 [toc]
 

@@ -7,7 +7,7 @@ title: Rust 有趣片段(一)：defer
 
 
 
-# Rust 有趣片段(一)：defer {.h1-center}
+# Rust 有趣片段(一)：defer 
 
 本系列用于分享一些简短有趣的 Rust 代码片段。第一篇介绍 defer 宏，它来自 async-std.
 
