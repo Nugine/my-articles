@@ -67,6 +67,10 @@ rust-analyzer 插件会尝试从 GitHub 上下载预构建的可执行文件，�
 
 从 Logs 中复制 URL，用科学手段下载模型（约 700 MB），放到对应的本地路径，最后重启编辑器和插件。
 
+值得一提的是，tabnine 是 Rust 写的，为了回馈 Rust 生态，tabnine 的付费功能对 Rust 代码免费开放。
+
+<https://www.tabnine.com/faq#language>
+
 ## Rust Search Extension
 
 用于搜索 Rust 文档的浏览器插件，基本上几次击键就能定位到标准库中的类型与函数。
